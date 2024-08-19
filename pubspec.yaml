@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   dart_code_metrics: ^5.7.6
+  go_router: ^14.2.3
 
 dev_dependencies:
   flutter_test:
