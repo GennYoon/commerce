@@ -1,4 +1,4 @@
-package com.webchemist.commerce.commerce
+package com.webchemist.commerce
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,30 +1,32 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import "package:go_router/go_router.dart";
+import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../routes/route_path.dart';
 
-class SplashPage extends StatelessWidget {
+// TODO: 로그인 bloc
+class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
+
+  @override
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 2), () => context.go(RoutePath.home));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("splash_page")),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "splash_page",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-            ElevatedButton(
-              onPressed: () => context.push(RoutePath.home),
-              child: Text("go_home"),
-            ),
-          ],
-        ),
-      ),
+      // TODO:하드코딩 된 값 변경
+      body: Center(child: SvgPicture.asset("assets/svg/main_logo.svg")),
+      backgroundColor: Color(0xFF5F0080),
     );
   }
 }
