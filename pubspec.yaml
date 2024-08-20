@@ -12,6 +12,7 @@ dependencies:
   dart_code_metrics: ^5.7.6
   go_router: ^14.2.3
   flutter_svg: ^2.0.9
+  flutter_bloc:
 
 dev_dependencies:
   flutter_test:
