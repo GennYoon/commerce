@@ -8,15 +8,19 @@ import '../pages/search/search.dart';
 import '../pages/user/user.dart';
 import 'component/top_app_bar/top_app_bar.dart';
 import 'cubit/bottom_nav_cubit.dart';
+import 'cubit/mall_type_cubit.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => BottomNavCubit(),
-      child: MainScreenView(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => BottomNavCubit()),
+        BlocProvider(create: (_) => MallTypeCubit()),
+      ],
+      child: const MainScreenView(),
     );
   }
 }
