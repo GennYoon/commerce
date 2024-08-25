@@ -10,7 +10,7 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BottomNavCubit, BottomNav>(builder: (_, state) {
+    return BlocBuilder<BottomNavCubit, BottomNav>(builder: (context, state) {
       switch (state) {
         case BottomNav.home:
           return const HomeAppBar();
@@ -23,6 +23,5 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(44);
 }
